@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rumo ao Pódio | Fórmula 1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo Rumo ao Pódio" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="pilotos.html">Pilotos</a></li>
+        <li><a href="equipes.html">Equipes</a></li>
+        <li><a href="calendario.html">Calendário</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Bem-vindo ao Rumo ao Pódio!</h1>
+      <p>Seu portal completo para tudo sobre Fórmula 1 — história, pilotos, equipes e as últimas notícias.</p>
+    </section>
+
+    <section class="historico-f1" aria-label="História da Fórmula 1">
+      <h2>Como surgiu a Fórmula 1?</h2>
+      <p>
+        A Fórmula 1 foi criada oficialmente em 1950, consolidando-se como a principal categoria do automobilismo mundial.
+        Seu nascimento ocorreu após a Segunda Guerra Mundial, reunindo os melhores pilotos e equipes da Europa para disputas de alta velocidade e tecnologia.
+      </p>
+      <p>
+        Grandes campeões como Juan Manuel Fangio, que dominou a década de 1950, e mais tarde Ayrton Senna e Michael Schumacher, marcaram a história do esporte.
+        A F1 evoluiu muito ao longo das décadas, incorporando avanços em segurança, engenharia e estratégia, tornando-se um dos esportes mais emocionantes e sofisticados do planeta.
+      </p>
+      <p>
+        Hoje, equipes como McLaren, Ferrari e Red Bull protagonizam batalhas eletrizantes, com pilotos jovens e experientes buscando a glória nas pistas do mundo inteiro.
+      </p>
+    </section>
+
+    <section class="cards" aria-label="Destaques de Pilotos e Equipes">
+      <div class="card" onclick="location.href='pilotos.html'" tabindex="0" role="button" aria-pressed="false">
+        <img src="norris.jpg" alt="Foto do piloto Lando Norris" />
+        <h3>Lando Norris</h3>
+        <p>Jovem talento britânico da McLaren, uma das grandes promessas da temporada 2025.</p>
+      </div>
+      <div class="card" onclick="location.href='equipes.html'" tabindex="0" role="button" aria-pressed="false">
+        <img src="mclaren-carro.jpg" alt="Carro da equipe McLaren" />
+        <h3>McLaren</h3>
+        <p>Equipe com o melhor carro do grid em 2025, dominando treinos e corridas.</p>
+      </div>
+      <div class="card" onclick="location.href='pilotos.html'" tabindex="0" role="button" aria-pressed="false">
+        <img src="verstappen.jpg" alt="Foto do piloto Max Verstappen" />
+        <h3>Max Verstappen</h3>
+        <p>Campeão mundial em busca do tri, líder da Red Bull e grande rival na temporada.</p>
+      </div>
+    </section>
+
+    <section class="noticias" aria-label="Últimas Notícias">
+      <h2>Últimas Notícias</h2>
+      <ul>
+        <li><a href="noticia-gp-imola.html">Max Verstappen vence no GP da Emilia-Romagna e aumenta sua vantagem na liderança</a></li>
+        <li><a href="regulamento.html">Novo regulamento da F1 para 2025</a></li>
+        <li><a href="expectativa-gp-espanha.html">Pilotos se preparam para o GP da Espanha</a></li>
+      </ul>
+    </section>
+
+    <section class="proxima-corrida" aria-label="Próxima corrida de Fórmula 1">
+      <h2>Próxima Corrida</h2>
+      <p><strong>GP da Espanha</strong> — 1º de junho de 2025</p>
+      <p><span id="contador" aria-live="polite" aria-atomic="true"></span></p>
+      <a href="calendario.html" style="color:#e10600; font-weight:700;">Ver Calendário Completo</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Rumo ao Pódio - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    // Contador regressivo para GP da Espanha (1º de junho de 2025)
+    const evento = new Date("2025-06-01T00:00:00");
+    const contadorEl = document.getElementById("contador");
+
+    function atualizarContador() {
+      const agora = new Date();
+      const diff = evento - agora;
+
+      if (diff <= 0) {
+        contadorEl.textContent = "A corrida está acontecendo!";
+        return;
+      }
+
+      const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diff / (1000 * 60)) % 60);
+      const segundos = Math.floor((diff / 1000) % 60);
+
+      contadorEl.textContent =
+        `Faltam ${dias} dias, ${horas}h ${minutos}m ${segundos}s para a largada`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+</body>
+
+</html>

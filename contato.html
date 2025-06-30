@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head charset="UTF-8">
+  <title>Contato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="caixa">
+      <h1><img src="logo.png" alt="Logo Rumo ao Pódio"></h1>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="pilotos.html">Pilotos</a></li>
+          <li><a href="equipes.html">Equipes</a></li>
+          <li><a href="calendario.html">Calendário</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <form>
+      <label for="nomesobrenome">Nome e sobrenome</label>
+      <input type="text" id="nomesobrenome" class="input-padrao" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com.br">
+
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" class="input-padrao" required placeholder="(xx) xxxxx-xxxx">
+
+      <label for="mensagem">Mensagem</label>
+      <textarea cols="70" rows="10" id="mensagem" class="input-padrao" required></textarea>
+
+      <fieldset>
+        <legend>Como prefere o nosso contato?</legend>
+
+        <label for="radio-email"><input type="radio" value="email" id="radio-email" name="contato"> Email</label>
+        <label for="radio-telefone"><input type="radio" value="telefone" id="radio-telefone" name="contato">
+          Telefone</label>
+        <label for="radio-whatsapp"><input type="radio" value="whatsapp" id="radio-whatsapp" name="contato" checked>
+          Whatsapp</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Qual horário prefere ser atendido?</legend>
+        <select>
+          <option>Manhã</option>
+          <option>Tarde</option>
+          <option>Noite</option>
+        </select>
+      </fieldset>
+
+      <label class="checkbox"><input type="checkbox"> Gostaria de receber nossas novidades por email?</label>
+
+      <input type="submit" value="Enviar formulário" class="enviar">
+    </form>
+  </main>
+
+  <footer>
+    <img src="logobranco.png" alt="Logo Rumo ao Pódio">
+    <p class="copyright">Copyright Rumo ao Pódio - 2022</p>
+  </footer>
+</body>
+
+</html>
